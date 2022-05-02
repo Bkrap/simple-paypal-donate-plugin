@@ -24,3 +24,12 @@ function mw_enqueue_color_picker( $hook_suffix ) {
     wp_enqueue_style( 'wp-color-picker' );
     wp_enqueue_script( 'my-script-handle', plugins_url('dist/script.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
 }
+
+
+define('PLUGIN_PATH', plugin_dir_path(__FILE__));
+
+require_once PLUGIN_PATH . 'paypal_donate.php';
+require_once PLUGIN_PATH . 'inc/paypal_donate_menu_page.php';
+require_once PLUGIN_PATH . 'inc/paypal_donate_settings_template.php';
+require_once PLUGIN_PATH . 'inc/paypal_donate_input_template.php';
+require_once PLUGIN_PATH . 'inc/paypal_donate_shortcode.php';
